@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1696323559 source:d:\usarb\srem\is11z\lavb2\main.cpp
+	<iostream>
+	<stdio.h>
+	<cstdlib>
+
