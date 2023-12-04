@@ -22,7 +22,7 @@ long long unsigned Permutari(int n) {
 
 }
 long long unsigned Aranjamente(int n, int m) {
-  //  return FactorialIterative(n)/ FactorialIterative(n-m);
+   return FactorialIterative(n)/ FactorialIterative(n-m);
   long long unsigned p = 1;
   for (int i=n;i >n-m;i--){
     p*=i;
@@ -30,7 +30,7 @@ long long unsigned Aranjamente(int n, int m) {
   return p;
 }
 long long unsigned Combinari(int n, int m) {
-  //  return FactorialIterative(n)/ FactorialIterative(n-m);
+  return FactorialIterative(n)/ FactorialIterative(n-m);
   long long unsigned p = 1, q =1;
   for (int i=n;i <=m;i++){
     p*=i;
@@ -41,10 +41,29 @@ long long unsigned Combinari(int n, int m) {
   return p/q;
 }
 
+int PermutariCuRepetitii(int n){
+    int rezultat= 1;
+    for (int i=0;i<n;++i){
+    rezultat *= n;
+    }
+    return rezultat;
+}
+long AranjameteCuRepetitii(int n , int m){
+    int rezultat= 1;
+    for (int i = n ; i < m;i++){
+        rezultat *= n;
+    }
+
+}
+long unsigned CombinariCuRepetitii(int n, int m){
+   return FactorialIterative(n + m-1)/ (FactorialIterative(m)*FactorialIterative(n-1));
+
+}
+
 
 int main()
 {
-    int n = 10, m=4;
+    int n = 3, m=3;
  //   cout << "Dati un numar pina la cat: ";
  //   cin >> n;
     cout << "Elemente din combinatorica!" << endl;
@@ -61,5 +80,9 @@ int main()
     cout << "\n Permutari din " << n << " elemente: " << Permutari(n);
     cout << "\n Aranjamente din " << n << " elemente cate  " << m << " elemente: " << Aranjamente(n, m);
     cout << "\n Combinari din " << n << " elemente cate  " << m << " elemente: " << Combinari(n, m);
+    cout <<"\n Permutari cu repetitii "<< n << "elemente: "<<PermutariCuRepetitii(n);
+    cout << "\n Aranjamente cu repetitii din " << n << " elemente cate  " << m << " elemente: " << AranjameteCuRepetitii(n, m);
+    cout << "\n Combinari cu repetitii din " << n << " elemente cate  " << m << " elemente: " << CombinariCuRepetitii(n, m);
+
     return 0;
 }
